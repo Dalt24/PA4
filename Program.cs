@@ -11,9 +11,23 @@ static void StartMain()
     Character? currPlayerOne = factory.GetPlayer();
     Character? currPlayerTwo = factory.GetPlayer();
 
-    DisplayCharacter(currPlayerOne, currPlayerTwo);
+    string userChoice = "";
+    while (userChoice != "3")
+    {
+        System.Console.WriteLine("Choose an Option");
+        System.Console.WriteLine("1. Play Game");
+        System.Console.WriteLine("2. View Characters Information");
+        System.Console.WriteLine("3. Exit");
 
-    StartGame(currPlayerOne, currPlayerTwo);
+        userChoice = Console.ReadLine();
+        if (userChoice == "1")
+        {
+            StartGame(currPlayerOne, currPlayerTwo);
+        }
+        else if (userChoice == "2" || userChoice == "3.") DisplayCharacter(currPlayerOne, currPlayerTwo);
+    }
+
+
 }
 
 static void Attack(Character? c1, Character? c2, double bonus)
